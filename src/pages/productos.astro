@@ -1,0 +1,37 @@
+---
+import ProductCard from '../components/ProductCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const productos = [
+  { name: 'Miel natural', price: '$10', image: '/imagenes/productos/miel.jpg' },
+  { name: 'Jabón artesanal', price: '$5', image: '/imagenes/productos/jabon.jpg' },
+  { name: 'Vela artesanal', price: '$5', image: '/imagenes/productos/vela.jpg' },
+  { name: 'Aceite artesanal', price: '$5', image: '/imagenes/productos/aceite.jpg' },
+  // Agrega más productos aquí
+];
+---
+<BaseLayout>
+<h1>Productos Disponibles</h1>
+<div class="productos">
+  {productos.map(product => (
+    <ProductCard name={product.name} price={product.price} image={product.image} />
+  ))}
+</div>
+<style>
+
+.productos {
+  display: flex;
+  justify-content: center; /* Centra todos los productos horizontalmente */
+  gap: 20px; /* Espacio entre cada producto */
+  flex-wrap: wrap; /* Permite que los productos se envuelvan en múltiples líneas si el espacio es insuficiente */
+}
+
+.productos img {
+  max-width: 100%; /* Asegura que ninguna imagen exceda el tamaño de su contenedor */
+  height: auto;    /* Mantiene la proporción de aspecto */
+  display: block;
+  margin: 0 auto;  /* Centra la imagen en su contenedor */
+}
+
+</style>
+</BaseLayout>

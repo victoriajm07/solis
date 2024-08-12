@@ -1,0 +1,48 @@
+---
+const menuItems = [
+  { title: 'Inicio', link: '/' },
+  { title: 'Historia', link: '/historia' },
+  { title: 'Localizaciones', link: '/localizaciones' },
+  { title: 'Productos', link: '/productos' }, // Enlace a la página de compras
+];
+---
+
+<header>
+  <nav>
+    <ul>
+      {menuItems.map(item => (
+        <li><a href={item.link}>{item.title}</a></li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    background-color: #006d77;
+    padding: 20px;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav ul li {
+    margin: 0 15px;
+  }
+
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+</style>
+

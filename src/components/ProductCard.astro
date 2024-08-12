@@ -1,0 +1,43 @@
+---
+import BuyButton from './BuyButton.astro';
+const { name, price, image } = Astro.props;
+---
+
+<div class="product-card">
+  <img src={image} alt={name} class="product-image" />
+  <h2>{name}</h2>
+  <p>{price}</p>
+  <BuyButton product={name} />
+</div>
+
+<style>
+.product-card {
+  flex: 1 1 200px;
+  max-width: 250px; /* Ajusta el tamaño máximo del contenedor */
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  max-width: 100%; /* Asegura que la imagen no sea más ancha que su contenedor */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px; /* Opcional: redondear las esquinas de la imagen */
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+p {
+  font-size: 1rem;
+  color: #666;
+}
+</style>
+
