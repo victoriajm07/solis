@@ -1,13 +1,17 @@
 ---
 import BuyButton from './BuyButton.astro';
-const { name, price, image } = Astro.props;
+const { name, price, image, handleAddToCart  } = Astro.props;
+
+function handleClick() {
+  handleAddToCart({ name, price, image }); // Agregamos el producto al carrito
+}
 ---
 
 <div class="product-card">
   <img src={image} alt={name} class="product-image" />
   <h2>{name}</h2>
   <p>{price}</p>
-  <BuyButton product={name} />
+  <BuyButton onclick={handleClick} class="buy-button" />
 </div>
 
 <style>

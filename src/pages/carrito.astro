@@ -1,0 +1,18 @@
+---
+const { cartItems } = Astro.props;
+
+---
+
+<h1>Tu Carrito</h1>
+
+{cartItems.length === 0 ? (
+  <p>Tu carrito está vacío.</p>
+) : (
+  <ul>
+    {cartItems.map((item: { name: unknown; price: unknown; }) => (
+      <li>{item.name} - {item.price}</li>
+    ))}
+  </ul>
+)}
+
+<a href="/productos">Seguir comprando</a>

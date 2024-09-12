@@ -1,6 +1,7 @@
 ---
 import ProductCard from '../components/ProductCard.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Carrito from './carrito.astro';
 
 const productos = [
   { name: 'Miel natural', price: '$10', image: '/imagenes/productos/miel.jpg' },
@@ -9,12 +10,16 @@ const productos = [
   { name: 'Aceite artesanal', price: '$5', image: '/imagenes/productos/aceite.jpg' },
   // Agrega más productos aquí
 ];
+
+
+const { handleAddToCart } = Astro.props;
+
 ---
 <BaseLayout>
 <h1>Productos Disponibles</h1>
 <div class="productos">
   {productos.map(product => (
-    <ProductCard name={product.name} price={product.price} image={product.image} />
+    <ProductCard name={product.name} price={product.price} image={product.image} handleAddToCart={handleAddToCart} />
   ))}
 </div>
 <style>

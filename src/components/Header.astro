@@ -5,6 +5,8 @@ const menuItems = [
   { title: 'Localizaciones', link: '/localizaciones' },
   { title: 'Productos', link: '/productos' }, // Enlace a la página de compras
 ];
+
+const { cartItems = [] } = Astro.props;
 ---
 
 <header>
@@ -13,7 +15,13 @@ const menuItems = [
       {menuItems.map(item => (
         <li><a href={item.link}>{item.title}</a></li>
       ))}
-    </ul>
+    
+    <div class="cart">
+      <a href="/carrito">
+         Carrito ({cartItems.length}) <!-- Muestra el número de productos en el carrito -->
+      </a>
+    </div>
+  </ul>
   </nav>
 </header>
 
@@ -21,6 +29,16 @@ const menuItems = [
   header {
     background-color: #006d77;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinea verticalmente los elementos */
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Asegura que el nav ocupe el 100% del ancho */
   }
 
   nav ul {
@@ -33,6 +51,9 @@ const menuItems = [
 
   nav ul li {
     margin: 0 15px;
+    background-color: #007f7f; /* Cambia el color de fondo */
+    padding: 10px 20px; /* Agrega relleno interno */
+    border-radius: 5px; /* Bordes redondeados */
   }
 
   nav ul li a {
@@ -44,5 +65,32 @@ const menuItems = [
   nav ul li a:hover {
     text-decoration: underline;
   }
+
+  .cart {
+    font-size: 18px;
+    margin-left: auto; /* Alinea el carrito a la derecha */
+  }
+
+  .cart a {
+    color: white;
+    text-decoration: none;
+    background-color: #007f7f; /* Cambia el color de fondo */
+    padding: 10px 20px; /* Agrega relleno interno */
+    border-radius: 5px; /* Bordes redondeados */
+    font-weight: bold;
+    display: flex;
+    align-items: center; /* Alinea el icono y el texto verticalmente */
+    gap: 5px; /* Espacio entre el icono y el texto */
+  }
+
+  .cart a:hover {
+    background-color: #005f5f; /* Cambia el color de fondo al hacer hover */
+  }
+
+  .cart a::before {
+    content: '🛒'; /* Icono del carrito */
+    margin-right: 5px;
+  }
 </style>
+
 
