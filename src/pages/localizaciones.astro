@@ -1,9 +1,36 @@
 ---
-import Carousel from '../components/Carousel.astro';
+import Carousel from "../components/Carousel.astro";
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const localizaciones = [
+    {name: 'Merendero', image: '/imagenes/localizaciones/2.jpeg'},
+    {name: 'Naranjeros centenarios', image: '/imagenes/localizaciones/3.jpeg'},
+    {name: 'Zona de cafetales', image: '/imagenes/localizaciones/4.jpeg'}
+];
 ---
 <BaseLayout>
     <h1>Localizaciones</h1>
-    <Carousel />
+    <div class="localizaciones">
+        {localizaciones.map(localizacion => (
+          <Carousel name={localizacion.name} image={localizacion.image} />
+        ))}
+      </div>
+
+<style>
+    .localizaciones {
+        display: flex;
+        justify-content: center; /* Centra todos los productos horizontalmente */
+        gap: 10px; /* Espacio entre cada producto */
+        flex-wrap: wrap; /* Permite que los productos se envuelvan en múltiples líneas si el espacio es insuficiente */
+    }
+
+    .localizaciones img {
+        max-width: 100%; /* Asegura que ninguna imagen exceda el tamaño de su contenedor */
+        height: auto;    /* Mantiene la proporción de aspecto */
+        display: block;
+        margin: 0 auto;  /* Centra la imagen en su contenedor */
+    }
+
+</style>
 </BaseLayout>
 

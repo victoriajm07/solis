@@ -3,13 +3,24 @@ const { cartItems } = Astro.props;
 
 ---
 
+<script>
+  // Obtener el carrito desde localStorage o inicializarlo como un array vacío
+  const getCartItems = () => {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    return Array.isArray(cart) ? cart : [];
+  };
+
+  const cartItems = getCartItems(); // Inicializa los items del carrito
+
+</script>
+
 <h1>Tu Carrito</h1>
 
 {cartItems.length === 0 ? (
   <p>Tu carrito está vacío.</p>
 ) : (
   <ul>
-    {cartItems.map((item: { name: unknown; price: unknown; }) => (
+    {cartItems.map((item: { name: string; price: number ; }) => (
       <li>{item.name} - {item.price}</li>
     ))}
   </ul>
