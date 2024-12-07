@@ -10,7 +10,7 @@ const menuItems = [
 const { cartItems = [] } = Astro.props;
 ---
 
-<header>
+<header class="header">
   <nav>
     <ul>
       {menuItems.map(item => (
@@ -28,6 +28,8 @@ const { cartItems = [] } = Astro.props;
 
 <style>
   header {
+    display: flex;
+    justify-content: space-between;
     background-color: #006d77;
     padding: 20px;
     display: flex;
@@ -92,6 +94,27 @@ const { cartItems = [] } = Astro.props;
     content: '🛒'; /* Icono del carrito */
     margin-right: 5px;
   }
+
+  @media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Cambia la dirección del header a vertical */
+    align-items: flex-start;
+  }
+
+  .header .nav {
+    width: 100%; /* Ocupa todo el ancho */
+    margin-top: 10px;
+  }
+
+  .header .nav-list {
+    flex-direction: column; /* Muestra los elementos en columna */
+    gap: 10px;
+  }
+
+  .header .nav-list li a {
+    font-size: 1.2rem;
+  }
+}
 </style>
 
 
