@@ -1,60 +1,88 @@
-# Astro Starter Kit: Basics
+# 🌐 Proyecto Web - Espacio Ambiental Hoya del Caballo 🌿
 
-```sh
-npm create astro@latest -- --template basics
+Este es un proyecto de página web estática desarrollado para el Espacio Ambiental Hoya del Caballo. Incluye características como una galería interactiva de localizaciones, un carrito funcional y un formulario de contacto. Todo diseñado para ofrecer una experiencia moderna y amigable.
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+- **Astro**: Framework para crear páginas web rápidas y optimizadas.
+- **HTML5 & CSS3**: Lenguajes base para la estructura y el diseño de la web.
+- **JavaScript**: Para funcionalidades interactivas como el giro de tarjetas y el carrito.
+- **FormSubmit**: Servicio de terceros para gestionar el formulario de contacto.
+- **Flexbox & CSS Grid**: Para un diseño responsivo y adaptado a diferentes tamaños de pantalla.
+
+---
+
+## 🚀 Características
+
+### **Localizaciones Interactivas**
+- Tarjetas que giran al hacer clic en "Más información" para mostrar detalles adicionales.
+- Totalmente responsivo y adaptado a diferentes dispositivos.
+- Diseño limpio y moderno con sombras y bordes redondeados.
+
+### **Carrito de Compras**
+- Funcionalidad para añadir productos al carrito.
+- Vista detallada del carrito con listado de productos.
+- Persistencia del carrito durante la sesión.
+
+### **Formulario de Contacto**
+- Permite a los usuarios enviar mensajes directamente desde la página.
+- Protegido contra spam con un honeypot y reCAPTCHA deshabilitado.
+- Redirige al usuario tras el envío con un mensaje de confirmación.
+- Configurado con **FormSubmit** para enviar correos sin necesidad de un backend.
+
+---
+
+## 📂 Estructura del Proyecto
+
+```plaintext
+📁 src
+├── 📁 components
+│   ├── BuyButton.astro         # Botón para añadir al carrito
+│   ├── Card.astro              # Tarjetas genéricas
+│   ├── Carousel.astro          # Galería interactiva
+│   ├── Footer.astro            # Pie de página
+│   ├── Header.astro            # Cabecera con navegación
+│   ├── ProductCard.astro       # Tarjetas de productos
+│
+├── 📁 layouts
+|   ├── BaseLayout.tsx          # Funcionalidad del carrito (no terminado)
+│   ├── BaseLayout.astro        # Layout principal
+│   ├── Layout.astro            # Layout secundario
+│
+├── 📁 pages
+│   ├── index.astro             # Página principal
+│   ├── productos.astro         # Listado de productos
+│   ├── localizaciones.astro    # Localizaciones interactivas
+│   ├── carrito.astro           # Página del carrito
+│   ├── contacto.astro          # Formulario de contacto
+|   ├── historia.astro          # Página de historia
+│
+📁 public
+├── 📁 fonts                    # Fuentes para textos
+├── 📁 imagenes                 # Recursos gráficos
+├── 📁 styles
+│   └── global.css              # Estilos globales
 ```
+--- 
+## 📦 Instalación y Uso
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Sigue estos pasos para configurar el proyecto localmente:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+### 1. **Clonar el repositorio**
+Copia el repositorio desde GitHub a tu máquina local:
+```bash
+git clone https://github.com/tu-usuario/tu-repo.git
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-
-
-Esta página esta hecha en astro.
-
-Para la utlización de correos se ha usado formsubmit
+### 2. **Instalar dependencias**
+```bash
+npm install
+```
+### 3. **Iniciar el proyecto en desarrollo**
+```bash
+npm run dev
+```
+---
+## 🌍 Despliegue en Vercel
+Proyecto disponible en https://solis-victoria-jimenez-martins-projects.vercel.app/ o https://solis.vercel.app/
