@@ -16,13 +16,22 @@ const { handleAddToCart } = Astro.props;
 
 ---
 <BaseLayout>
-<h1>Productos Disponibles</h1>
+<h1 class="section-title">Productos Disponibles</h1>
 <div class="productos">
   {productos.map(product => (
     <ProductCard name={product.name} price={product.price} image={product.image} handleAddToCart={handleAddToCart} />
   ))}
 </div>
 <style>
+
+h1 {
+        text-align: center;
+    }
+.section-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
 
 .productos {
   display: flex;

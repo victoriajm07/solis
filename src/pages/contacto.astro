@@ -6,7 +6,7 @@ const showMessage = Astro.url.searchParams.get('success') === 'true';
 <!-- Formulario de contacto -->
 <BaseLayout>
 <div class="contact-container">
-    <h2>Contáctanos</h2>  
+    <h2 class="section-title">Contáctanos</h2>  
 
     <form action="https://formsubmit.co/victoria10444@gmail.com" method="POST" class="contact-form">
           <!-- Campo honeypot (spam protection) -->
@@ -37,6 +37,16 @@ const showMessage = Astro.url.searchParams.get('success') === 'true';
   </BaseLayout>
   
   <style>
+
+    h1 {
+            text-align: center;
+        }
+    .section-title {
+        font-size: 3em;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
     /* Estilos generales del contenedor del formulario */
     .contact-container {
       max-width: 600px;

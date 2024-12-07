@@ -3,12 +3,148 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
-	<h1>Bienvenido a Nuestro Espacio Ambiental Hoya del Caballo</h1>
-	<p>Descubre la belleza natural y la rica historia que nuestro lugar tiene para ofrecer.</p>
+  <section id="inicio" class="hero">
+    <div class="container">
+        <h1 class="hero-title"> <span class="highlight">Bienvenido a Espacio Ambiental Hoya del Caballo</span></h1>
+        <p class="hero-text">
+            Un lugar donde la naturaleza y el legado familiar se entrelazan para ofrecer un refugio de paz, aprendizaje y sostenibilidad. Aquí, cada rincón cuenta una historia y cada paso es una conexión con el corazón de la Tierra.
+        </p>
+        <a href="/historia" class="btn btn-primary">Descubre nuestra historia</a>
+        <a href="/productos" class="btn btn-secondary">Explora nuestros productos</a>
+    </div>
+</section>
+<section id="destacados" class="highlights">
+    <div class="container">
+        <h2 class="section-title">¿Por qué visitarnos?</h2>
+        <div class="highlight-items">
+            <div class="highlight-item">
+                <img src="https://via.placeholder.com/150" alt="Conexión con la Naturaleza">
+                <h3>Conexión con la Naturaleza</h3>
+                <p>Explora un entorno único dentro de una Reserva Natural de la Biosfera, rodeado de vida y biodiversidad.</p>
+            </div>
+            <div class="highlight-item">
+                <img src="https://via.placeholder.com/150" alt="Aprendizaje Sostenible">
+                <h3>Aprendizaje Sostenible</h3>
+                <p>Participa en talleres y actividades diseñadas para fomentar el cuidado del medio ambiente.</p>
+            </div>
+            <div class="highlight-item">
+                <img src="https://via.placeholder.com/150" alt="Productos Locales">
+                <h3>Productos Locales</h3>
+                <p>Descubre una selección de productos artesanales y ecológicos, elaborados con amor por nuestra tierra.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 </BaseLayout>
 
   <style>
     h1 {
         text-align: center;
     }
+
+    /* Hero Section */
+.hero {
+    background: linear-gradient(to right, #026873, #03707f);
+    color: #ffffff;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.hero-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-title .highlight {
+    color: #f4f9f4;
+    font-weight: bold;
+}
+
+.hero-text {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: #dff6f0;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #064635;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #03707f;
+}
+
+.btn-secondary {
+    background-color: #dff6f0;
+    color: #026873;
+}
+
+.btn-secondary:hover {
+    background-color: #026873;
+    color: #ffffff;
+}
+
+/* Highlights Section */
+.highlights {
+    background-color: #f4f9f4;
+    padding: 50px 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    color: #026873;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.highlight-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.highlight-item {
+    background-color: #dff6f0;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-item img {
+    max-width: 100px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.highlight-item h3 {
+    font-size: 1.5em;
+    color: #026873;
+    margin-bottom: 10px;
+}
+
+.highlight-item p {
+    font-size: 1.1em;
+    color: #064635;
+    line-height: 1.6;
+}
+
 </style>

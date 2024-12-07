@@ -9,7 +9,7 @@ const localizaciones = [
 ];
 ---
 <BaseLayout>
-    <h1>Localizaciones</h1>
+    <h1 class="section-title">Localizaciones</h1>
     <div class="localizaciones">
         {localizaciones.map(localizacion => (
           <Carousel name={localizacion.name} image={localizacion.image} />
@@ -17,6 +17,17 @@ const localizaciones = [
       </div>
 
 <style>
+
+    h1 {
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 3em;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
     .localizaciones {
         display: flex;
         justify-content: center; /* Centra todos los productos horizontalmente */

@@ -1,5 +1,27 @@
+/* Regular */
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Regular/Roboto-Regular.woff2?v=2.137') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+/* Italic */
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Italic/Roboto-Italic.woff2?v=2.137') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+/* Bold */
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Bold/Roboto-Bold.woff2?v=2.137') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f4f8;
@@ -37,26 +59,6 @@ body {
     color: #006d77;
   }
   
-  .product-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 15px;
-    text-align: center;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  }
-  
-  .product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .product-card img {
-    max-width: 100%;
-    border-radius: 8px;
-  }
-  
   footer {
     background-color: #006d77;
     padding: 10px;
@@ -66,4 +68,5 @@ body {
     width: 100%;
     bottom: 0;
   }
+  
   

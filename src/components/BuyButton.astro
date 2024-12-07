@@ -6,16 +6,26 @@ const { product } = Astro.props;
 //}
 ---
 
-<button class="buy-button" onclick="alert('Has comprado!')">
+<div class="btn-contain">
+<button class="btn-shop btn-buy" onclick="alert('Has comprado!')">
     Comprar
   </button>
-  <button class="buy-button" onclick="alert('Has comprado!')">
-    Añadir al carrito
+  <button class="btn-shop btn-cart" disabled="true" aria-disabled="true" onclick="alert('Has añadido al carrito!')">
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M12.5 17h-6.5v-14h-2" /><path d="M6 5l14 1l-.86 6.017m-2.64 .983h-10.5" /><path d="M16 19h6" /><path d="M19 16v6" /></svg>
   </button>
+</div>
 
 <style>
-.buy-button {
-  background-color: #ffafcc;
+.btn-contain {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.btn-shop {
+  background-color: #007f7f;
   border: none;
   padding: 10px 20px;
   color: #fff;
@@ -23,9 +33,22 @@ const { product } = Astro.props;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  /* margin: 0px 5px 10px 5px; */
+  /* width: 50%; */
+  height: 45px;
+}
+.btn-shop:hover {
+  background-color: #379999;
+}
+.btn-shop:disabled {
+  background-color: #c1dfff;
+  color: #afafaf;
+}
+.btn-buy {
+  width: 75%;
+}
+.btn-cart {
+  width: 25%;
 }
 
-.buy-button:hover {
-  background-color: #ff8fa3;
-}
 </style>

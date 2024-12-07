@@ -1,4 +1,5 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 const { cartItems } = Astro.props;
 
 ---
@@ -14,16 +15,18 @@ const { cartItems } = Astro.props;
 
 </script>
 
-<h1>Tu Carrito</h1>
+<BaseLayout>
+  <h1>Tu Carrito</h1>
+  {!cartItems || cartItems.length === 0 ? (
+    <p>Tu carrito está vacío y siempre estará vacío 🙃.</p>
+  ) : (
+    <ul>
+      {cartItems?.map((item: { name: string; price: number ; }) => (
+        <li>{item?.name} - {item?.price}</li>
+      ))}
+    </ul>
+  )}
 
-{cartItems.length === 0 ? (
-  <p>Tu carrito está vacío.</p>
-) : (
-  <ul>
-    {cartItems.map((item: { name: string; price: number ; }) => (
-      <li>{item.name} - {item.price}</li>
-    ))}
-  </ul>
-)}
+  <a href="/productos">Seguir comprando</a>
 
-<a href="/productos">Seguir comprando</a>
+</BaseLayout>
