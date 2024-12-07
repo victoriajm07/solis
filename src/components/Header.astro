@@ -11,8 +11,8 @@ const { cartItems = [] } = Astro.props;
 ---
 
 <header class="header">
-  <nav>
-    <ul>
+  <nav class="nav">
+    <ul class="menu">
       {menuItems.map(item => (
         <li><a href={item.link}>{item.title}</a></li>
       ))}
@@ -27,94 +27,124 @@ const { cartItems = [] } = Astro.props;
 </header>
 
 <style>
-  header {
-    display: flex;
-    justify-content: space-between;
-    background-color: #006d77;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Alinea verticalmente los elementos */
-  }
+/* Estilo base para el header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #006d77;
+  padding: 20px;
+}
 
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Asegura que el nav ocupe el 100% del ancho */
-  }
+/* Navegación */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ocupa todo el ancho del header */
+}
 
-  nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-  }
+nav ul.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  gap: 15px; /* Espacio entre los elementos del menú */
+}
 
-  nav ul li {
-    margin: 0 15px;
-    background-color: #007f7f; /* Cambia el color de fondo */
-    padding: 10px 20px; /* Agrega relleno interno */
-    border-radius: 5px; /* Bordes redondeados */
-  }
+nav ul.menu li {
+  background-color: #007f7f; /* Color de fondo */
+  padding: 10px 20px; /* Relleno interno */
+  border-radius: 5px; /* Bordes redondeados */
+}
 
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-  }
+nav ul.menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
 
-  nav ul li a:hover {
-    text-decoration: underline;
-  }
+nav ul.menu li a:hover {
+  text-decoration: underline;
+}
 
-  .cart {
-    font-size: 18px;
-    margin-left: auto; /* Alinea el carrito a la derecha */
-  }
+/* Carrito */
+.cart {
+  font-size: 18px;
+  margin-left: auto; /* Empuja el carrito hacia la derecha */
+}
 
-  .cart a {
-    color: white;
-    text-decoration: none;
-    background-color: #007f7f; /* Cambia el color de fondo */
-    padding: 10px 20px; /* Agrega relleno interno */
-    border-radius: 5px; /* Bordes redondeados */
-    font-weight: bold;
-    display: flex;
-    align-items: center; /* Alinea el icono y el texto verticalmente */
-    gap: 5px; /* Espacio entre el icono y el texto */
-  }
+.cart a {
+  color: white;
+  text-decoration: none;
+  background-color: #007f7f;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
-  .cart a:hover {
-    background-color: #005f5f; /* Cambia el color de fondo al hacer hover */
-  }
+.cart a:hover {
+  background-color: #005f5f; /* Color al pasar el ratón */
+}
 
-  .cart a::before {
-    content: '🛒'; /* Icono del carrito */
-    margin-right: 5px;
-  }
+.cart a::before {
+  content: '🛒'; /* Icono del carrito */
+  margin-right: 5px;
+}
 
-  @media (max-width: 768px) {
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
   .header {
-    flex-direction: column; /* Cambia la dirección del header a vertical */
+    flex-direction: column; /* Cambia a diseño vertical */
     align-items: flex-start;
   }
 
-  .header .nav {
+  nav {
     width: 100%; /* Ocupa todo el ancho */
     margin-top: 10px;
   }
 
-  .header .nav-list {
-    flex-direction: column; /* Muestra los elementos en columna */
-    gap: 10px;
+  nav ul.menu {
+    flex-direction: column; /* Los elementos del menú en columna */
+    width: 100%; /* Ocupan todo el ancho */
+    gap: 10px; /* Espacio entre los elementos */
   }
 
-  .header .nav-list li a {
-    font-size: 1.2rem;
+  nav ul.menu li {
+    text-align: center; /* Centra el texto de los enlaces */
+    width: 100%; /* Los enlaces ocupan todo el ancho disponible */
+  }
+
+  nav ul.menu li a {
+    font-size: 16px; /* Ajusta el tamaño de la fuente */
+  }
+
+  .cart {
+    width: 100%; /* Ocupa todo el ancho del header */
+    text-align: center; /* Centra el carrito */
+    margin-top: 15px; /* Espacio adicional con respecto al menú */
   }
 }
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px; /* Reduce el padding en pantallas muy pequeñas */
+  }
+
+  nav ul.menu li a {
+    font-size: 14px; /* Reduce aún más el tamaño de la fuente */
+  }
+
+  .cart a {
+    padding: 8px 15px; /* Reduce el relleno interno */
+    font-size: 14px; /* Reduce el tamaño del texto del carrito */
+  }
+}
+
 </style>
 
 
